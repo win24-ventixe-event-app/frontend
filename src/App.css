@@ -1,7 +1,45 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.center-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
 }
 
+.portal-wrapper {
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  grid-template-areas: "nav" "main" "footer";
+  grid-template-rows: auto 1fr auto;
+  height: 100dvh;
+
+  @media (width >= 768px) {
+    grid-template-columns: 250px 1fr;
+    grid-template-areas: "nav header" "nav main" "nav footer";
+  }
+  @media (width >= 1400px) {
+    grid-template-columns: 96px 1fr;
+    grid-template-areas: "nav header" "nav main" "nav footer";
+    }
+  }
+  
+
+nav {
+  grid-area: nav;
+}
+header {
+  grid-area: header;
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
+}
