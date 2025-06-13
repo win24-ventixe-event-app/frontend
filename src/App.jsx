@@ -1,21 +1,19 @@
 
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
-import Events from './assets/pages/Events'
-import Dashboard from './assets/pages/Dashboard'
 import Bookings from './assets/pages/Bookings'
 import EventDetails from './assets/pages/EventDetails'
+import PortalLayout from './assets/layouts/PortalLayout'
+import EventPage from './assets/pages/EventPage'
 
 function App() {
-
-
   return (
     <Routes>
-      <Route path="/" element={<Dashboard />}/>
-      <Route path='/events' element={<Events/>}/>
-      <Route path='/bookings' element={<Bookings/>}/>
-      <Route path='/events/:id' element={<EventDetails/>}/>
-      
+       <Route element={<PortalLayout />}>
+          <Route path='/' element={<EventPage />} />
+          <Route path="/events/:id" element={<EventDetails />} />
+          <Route path="/events/booking/:id" element={<Bookings />} />
+        </Route>
     </Routes>
   )
 }
